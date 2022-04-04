@@ -87,10 +87,23 @@ class PastaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    /*public function edit($id)//senza dependency injection
     {
+        $pasta = Pasta::find($id); 
+
+        if ($pasta){
+            return view('pasta.edit', compact('pasta'));
+        }else{
+            abort(404);
+        }
+    }*/
+
+    public function edit(Pasta $pastum) // con la dependency injection
+    {
+        return view('pasta.edit', compact('pastum'));
 
     }
+
 
     /**
      * Update the specified resource in storage.
