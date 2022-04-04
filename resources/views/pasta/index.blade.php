@@ -31,10 +31,19 @@
                         <td>{{$pasta->cooking_time}}</td>
                         <td>{{$pasta->weight}}</td>
 
-                        <td>
+                        <td class="d-flex">
                             <a class="btn btn-primary" href="{{ route('pasta.show', $pasta->id) }}" role="button">Vedi</a>
-                        </td>
+                            <a class="btn btn-warning mx-1" href="{{ route('pasta.edit', $pasta->id) }}" role="button">Modifica</a>
 
+                            <form action="{{route('pasta.destroy', ['pastum' => $pasta->id])}}" method="post">
+                                @csrf
+                                @method('DELETE')
+
+                                <button type="submit" class="btn btn-danger">Elimina</button>
+                            </form>
+
+                        </td>
+                        
                     </tr>
                 @endforeach
             </tbody>

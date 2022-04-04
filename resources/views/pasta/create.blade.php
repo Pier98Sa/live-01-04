@@ -14,12 +14,12 @@
 
             <div class="mb-3">
                 <label for="src" class="form-label" >Indirizzo immagine</label>
-                <input required type="text" class="form-control" id="src" name="src" value="https://www.miosito.it">
+                <input required type="text" class="form-control" id="src" name="src" value="">
             </div>
 
             <div class="mb-3">
                 <label for="title" class="form-label" >Nome del formato</label>
-                <input type="text" class="form-control" id="title" name="title" value="Pippo">
+                <input type="text" class="form-control" id="title" name="title" value="">
             </div>
 
             <div class="mb-3">
@@ -35,17 +35,17 @@
 
             <div class="mb-3">
                 <label for="cooking_time" class="form-label" >Tempo di cottura</label>
-                <input type="number" class="form-control" id="cooking_time" name="cooking_time" value="11">
+                <input type="number" class="form-control" id="cooking_time" name="cooking_time" value="">
             </div>
 
             <div class="mb-3">
                 <label for="weight" class="form-label" >Peso</label>
-                <input type="number" class="form-control" id="weight" name="weight" value="500">
+                <input type="number" class="form-control" id="weight" name="weight" value="">
             </div>
 
 
             <div class="form-floating">
-                <textarea class="form-control" placeholder="Descrizione" id="description" name="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis cum iste perferendis. Harum architecto, quod velit autem fugiat id inventore amet alias sed ipsum consequuntur iste tempora quia, facere placeat!</textarea>
+                <textarea class="form-control" placeholder="Descrizione" id="description" name="description"></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary">Invia</button>

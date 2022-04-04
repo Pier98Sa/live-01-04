@@ -28,7 +28,7 @@ class PastaController extends Controller
      */
     public function create()
     {
-        return view('pasta.create');
+        return view('pasta.create')->with('status','Elemento creato');
     }
 
     /**
@@ -112,9 +112,13 @@ class PastaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Pasta $pastum)
     {
-        //
+        $data = $request->all();
+        $pastum->update($data);
+        $pastum->save();
+
+        return redirect()->route('pasta.show', ['pastum' => $pastum->id]);
     }
 
     /**
@@ -123,8 +127,10 @@ class PastaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Pasta $pastum)
     {
-        //
+        $pastum->delete();
+
+        return redirect()->route('pasta.index')->with('status','Elemento correttamente cancellato');
     }
 }
